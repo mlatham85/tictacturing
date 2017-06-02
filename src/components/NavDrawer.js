@@ -1,4 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import { Link } from 'react-router'
+
 import Drawer from 'material-ui/Drawer'
 import MenuItem from 'material-ui/MenuItem'
 import Divider from 'material-ui/Divider'
@@ -9,7 +11,7 @@ import Menu from 'material-ui/svg-icons/navigation/menu'
 
 class NavDrawer extends Component {
   state = {
-    open: false
+    open: true
   }
 
   toggle = () => {
@@ -38,8 +40,18 @@ class NavDrawer extends Component {
             Login Container
           </div>
           <Divider />
-          <MenuItem primaryText={'Play'} />
-          <MenuItem primaryText={'Profile'} />
+          <Link to={'/'}>
+            <MenuItem
+              primaryText={'Play'}
+              onTouchTap={this.toggle}
+            />
+          </Link>
+          <Link to={'/profile'}>
+            <MenuItem
+              primaryText={'Profile'}
+              onTouchTap={this.toggle}
+            />
+          </Link>
         </Drawer>
       </div>
     );
