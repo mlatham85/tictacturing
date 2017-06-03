@@ -3,14 +3,14 @@ import { Route, IndexRoute } from 'react-router'
 
 // Components
 import Template from '../containers/Template'
-import Home from '../containers/Home'
+import TicTacToe from '../containers/TicTacToe'
 import Profile from '../containers/Profile'
 
 const createRoutes = () => {
   return (
     <Route path='/'
       component={Template} >
-      <IndexRoute component={Home} />
+      <IndexRoute component={TicTacToe} />
       <Route path={'/profile'}
         component={Profile} />
     </Route>

@@ -15,7 +15,7 @@ class Template extends Component {
         <div>
           <NavDrawer />
           <Header>
-            TicTacToe
+            TicTacTuring
           </Header>
           <Main>
             {this.props.children}
