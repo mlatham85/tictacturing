@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import injectTapEventPlugin from 'react-tap-event-plugin'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import NavDrawer from '../components/NavDrawer'
+import { Header, Main } from '../styled/Template'
+
 
 injectTapEventPlugin()
 
@@ -12,9 +14,12 @@ class Template extends Component {
       <MuiThemeProvider>
         <div>
           <NavDrawer />
-          <main>
+          <Header>
+            TicTacToe
+          </Header>
+          <Main>
             {this.props.children}
-          </main>
+          </Main>
         </div>
       </MuiThemeProvider>
     )
