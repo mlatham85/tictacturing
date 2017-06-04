@@ -65,7 +65,7 @@ class AuthService {
     logout = () => {
         localStorage.removeItem('idToken')
         localStorage.removeItem('exp')
-        location.reload()
+        Location.reload()
     }
 
 }
