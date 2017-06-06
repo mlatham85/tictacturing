@@ -1,6 +1,6 @@
 import Auth0Lock from 'auth0-lock'
-const authDomain = 'carlpeaslee.auth0.com'
-const clientId = 'kpcjF5KAIOOGe2Sm4n4NnPFjFhg9YwPI'
+const authDomain = 'mlatham.auth0.com'
+const clientId = 'LI9nuQAO95T1443RSada47xuHiT6a3PL'
 
 class AuthService {
 	constructor() {

@@ -62,8 +62,8 @@
     "styled-components": "^1.4.2"
   },
   "scripts": {
-    "start": "GRAPHQL_ENDPOINT=https://api.graph.cool/relay/v1/ciyn8rxsl3bs201324sbzf0hx node scripts/start.js",
-    "build": "GRAPHQL_ENDPOINT=https://api.graph.cool/relay/v1/ciyn8rxsl3bs201324sbzf0hx node scripts/build.js",
+    "start": "GRAPHQL_ENDPOINT=https://api.graph.cool/relay/v1/cj3g64yjf309b0170q1elnn9q node scripts/start.js",
+    "build": "GRAPHQL_ENDPOINT=https://api.graph.cool/relay/v1/cj3g64yjf309b0170q1elnn9q node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom"
   },
   "jest": {
