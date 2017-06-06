@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
-import { Stage } from 'react-konva'
-import { Board, Squares } from '../styled/TicTacToe'
+import React, {Component} from 'react'
+import {Stage} from 'react-konva'
+import {Board, Squares} from '../styled/TicTacToe'
 
 class TicTacToe extends Component {
 
@@ -31,12 +31,10 @@ class TicTacToe extends Component {
 
   componentWillMount() {
     let height = window.innerHeight
-    let width  = window.innerWidth
-    let size   = (height < width) ? height * .8 : width * .8
-    let rows   = this.state.rows
-    let unit   = size / rows
-
-    // Build squares for each box in the board (9)
+    let width = window.innerWidth
+    let size = (height < width) ? height * .8 : width * .8
+    let rows = this.state.rows
+    let unit = size / rows
     let coordinates = []
     for (let y = 0; y < rows; y++) {
       for (let x = 0; x < rows; x++) {
@@ -52,42 +50,42 @@ class TicTacToe extends Component {
     })
   }
 
-  move = (marker, index) => {
-    this.setState((prevState, props) => {
-      let {gameState, yourTurn, gameOver, winner} = prevState
-      yourTurn = !yourTurn
-      gameState.splice(index, 1, marker)
-      let foundWin = this.winChecker(gameState)
-      if (foundWin) {
-        winner = gameState[foundWin[0]]
-      }
-      if (foundWin || !gameState.includes(false)) {
-        gameOver = true
-      }
-      if (!yourTurn && !gameOver) {
-        this.makeAiMove(gameState)
-      }
-      return {
-        gameState,
-        yourTurn,
-        gameOver,
-        win: foundWin || false,
-        winner
-      }
+  move = (index, marker) => {
+    this.setState( (prevState, prop) => {
+        let {gameState, yourTurn, gameOver, winner} = prevState
+        yourTurn = !yourTurn
+        gameState.splice(index, 1, marker)
+        let foundWin = this.winChecker(gameState)
+        if (foundWin) {
+          winner = gameState[foundWin[0]]
+        }
+        if (foundWin || !gameState.includes(false)) {
+          gameOver = true
+        }
+        if (!yourTurn && !gameOver) {
+          this.makeAiMove(gameState)
+        }
+        return {
+          gameState,
+          yourTurn,
+          gameOver,
+          win: foundWin || false,
+          winner
+        }
     })
   }
 
   makeAiMove = (gameState) => {
     let otherMark = this.state.otherMark
     let openSquares = []
-    gameState.forEach((square, index) => {
+    gameState.forEach( (square, index) => {
       if(!square) {
         openSquares.push(index)
       }
     })
     let aiMove = openSquares[this.random(0, openSquares.length)]
-    setTimeout(() => {
-      this.move(otherMark, aiMove)
+    setTimeout(()=>{
+      this.move(aiMove,otherMark)
     }, 1000)
   }
 
@@ -99,10 +97,18 @@ class TicTacToe extends Component {
 
   winChecker = (gameState) => {
     let combos = this.combos
-    return combos.find((combo) => {
+    return combos.find( (combo) => {
       let [a,b,c] = combo
       return (gameState[a] === gameState[b] && gameState[a] === gameState[c] && gameState[a])
     })
+  }
+
+  turingTest = () => {
+
+  }
+
+  recordGame = () => {
+
   }
 
   render() {
@@ -117,7 +123,6 @@ class TicTacToe extends Component {
       yourTurn,
       ownMark
     } = this.state
-
     return (
       <div>
         <Stage
@@ -140,7 +145,6 @@ class TicTacToe extends Component {
             move={this.move}
           />
         </Stage>
-       
       </div>
     )
   }
