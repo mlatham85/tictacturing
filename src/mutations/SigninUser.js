@@ -1,6 +1,6 @@
 import Relay, { Mutation } from 'react-relay'
 
-export default class SignInUser extends Mutation {
+export default class SigninUser extends Mutation {
 
   getVariables() {
     return {
@@ -28,7 +28,7 @@ export default class SignInUser extends Mutation {
         type: 'REQUIRED_CHILDREN',
         children: [
           Relay.QL`
-            fragment on SigninUserPayload {
+            fragment on SigninPayload {
               viewer {
                 user {
                   id
