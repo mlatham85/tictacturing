@@ -71,6 +71,11 @@
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom"
   },
+  "graphql": {
+    "request": {
+      "url": "https://api.graph.cool/relay/v1/cj3g64yjf309b0170q1elnn9q"
+    }
+  },
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx}"
