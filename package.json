@@ -2,6 +2,11 @@
   "name": "tictacturing",
   "version": "0.1.0",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mlatham85/tictacturing.git"
+  },
+  "description": "A react app to play tic-tac-toe against an opponent, and answer a Turing test",
   "devDependencies": {
     "autoprefixer": "6.5.1",
     "babel-core": "6.17.0",
@@ -62,8 +67,8 @@
     "styled-components": "^1.4.2"
   },
   "scripts": {
-    "start": "GRAPHQL_ENDPOINT=https://api.graph.cool/relay/v1/cj3g64yjf309b0170q1elnn9q node scripts/start.js",
-    "build": "GRAPHQL_ENDPOINT=https://api.graph.cool/relay/v1/cj3g64yjf309b0170q1elnn9q node scripts/build.js",
+    "start": "node scripts/start.js",
+    "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom"
   },
   "jest": {
