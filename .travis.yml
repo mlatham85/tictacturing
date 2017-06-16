@@ -1,7 +1,12 @@
 language: node_js
 node_js:
-  - 6
+- 6
 cache: yarn
 script:
-  - yarn test
-  - yarn build
+- yarn test
+- yarn build
+deploy:
+  provider: heroku
+  app: tictacturing-ml
+  api_key:
+    secure: JhPWkbOOJx/7mVKBQLDrYvbXu8I1YaJ3p3K/XkaxxqYLoGH5Yl3hjFyvTb+LtdptllV29GJwrR6tKcKgsoNXPI1uxpHpA/bMo2dRCd3WWXzk4vt7kBlKSdRf8QsOMXaXinjFt63sYyj9ydFGUGPZ6L1T8/wi5DUOivXY9lTiKWQZmde+bv+jjsOH2s4mMrkllKNZbk8YDsAxTprAp7mjjuagGF5HlYCzdTo48Gq7e2MwMuFAr9A1mEKNfWZapwzBduxwUUMbwsUxFCSu1EqQRP8yXgvd5InifrRi2MHm5CY5Pq9nvzCcSVRRIE64zCst4dOkB2cx6KKWLu4Zqwr+HpPd9Dv3E16BCHr/N+7yKqMO6cZ3jPTRqKt9CAG32qo1lp2WmeQRiXdDC6Mp7cHobTsFnfRRuyiTURKk2wKCONUxpGicuXKCfRSSplVlSzDHvj0YShdLSPEFmOnsvU7Q2gnf56aoLnZHB9qA5f7TNOa6v4cRvDevJRZoZjPELBtX2LCXuBjaGOe8U2E4VR8q4C+ar5xRCo7DzeuzHlRp1yCb8EjRKVMP8dwAGgpqR/SgNvfMZGD7pHLpAcsLSaB9Ci2XgiZEkJ+7s1+I1lvSI4PhQor8LitRKXY9jsF7aRywNXkPr9Z0Q/ks+W0P0Fp0t5V0rIZZuORK5hup7PWfi3A=
